@@ -1,48 +1,31 @@
-char    *ft_strncpy(char *dest, char *src, unsigned int n)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-        unsigned int    i;
-
-        i = 0;
-        while (i < n  && src[i] != '\0')
-        {
-                dest[i] = src[i];
-                i++;
-        }
-
-        while (i < n)
-        {
-                dest[i] = '\0';
-                i++;
-        }
-        return (dest);
-}
-
-char *ft_strncat(char *dest, char *src, unsigned int nb)
-{
-	char	*out;
-
+	char 	*out;
+	unsigned int 	i;
+	i = 0;
 	out = dest;
 	while (*dest != '\0')
+		dest++;
+	while (i < nb && src[i] != '\0')
 	{
-		dest++;	
+		dest[i] = src[i];
+		i++;
 	}
-	ft_strncpy(dest, src, nb);
-	return (out);
+	dest[i] = '\0';
+	return out;
 }
-
+/*
 int main(int argc, char *argv[])
 {
 #include <string.h>
 #include <stdio.h>
-	char o[20] = "Darek";
-	char u[20] = "Darek";
+	char o[5] = "Darek";
+	char u[5] = "Darek";
 
 	if (argc > 1)
 	{
-		printf("original function: %s\n", strncat(o, argv[1], 10));
-		printf("user defined function: %s\n", ft_strncat(u, argv[1], 10));
+		printf("original function: %s\n", strncat(o, argv[1], 3));
+		printf("user defined function: %s\n", ft_strncat(u, argv[1], 3));
 	}
 }
-
-
-
+*/

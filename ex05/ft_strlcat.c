@@ -1,40 +1,27 @@
-unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-        unsigned int    i;
-        unsigned int    j;
-        i = 0;
-
-        while (src[i] != '\0')
-        {
-                if (i < size - 1)
-                        dest[i] = src[i];
-                i++;
-        }
-        j = i;
-
-        while (i < size)
-        {
-                dest[i] = '\0';
-                i++;
-        }
-
-        return (j);
-}
-
 unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int out;
+	unsigned int	d_len;
+	unsigned int	s_len;
+	unsigned int	i;
 
-	out = 0;
-	while (*dest != '\0')
+	d_len = 0;
+	s_len = 0;
+	while (src[s_len])
+		s_len++;
+	while (d_len < size && dest[d_len])
+		d_len++;
+	if (d_len == size)
+		return (size + s_len);
+	i = 0;
+	while (src[i] && d_len + i < size - 1)
 	{
-		out++;
-		dest++;	
+		dest[d_len + i] = src[i];
+		i++;
 	}
-	out = out + ft_strlcpy(dest, src, size);
-	return (out);
+	dest[d_len + i] = '\0';
+	return (d_len + s_len);
 }
-
+/*
 int main(int argc, char *argv[])
 {
 #include <string.h>
@@ -48,6 +35,4 @@ int main(int argc, char *argv[])
 		printf("user defined function: %u\n", ft_strlcat(u, argv[1], 10));
 	}
 }
-
-
-
+*/
