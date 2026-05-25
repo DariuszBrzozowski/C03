@@ -24,7 +24,7 @@ char	*ft_strcat(char *dest, char *src)
 	ft_strcpy(dest, src);
 	return (out);
 }
-
+/*
 int main(int argc, char *argv[])
 {
 #include <string.h>
@@ -38,6 +38,4 @@ int main(int argc, char *argv[])
 		printf("user defined function: %s\n", ft_strcat(u, argv[1]));
 	}
 }
-
-
-
+*/

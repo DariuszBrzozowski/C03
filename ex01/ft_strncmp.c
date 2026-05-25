@@ -13,7 +13,7 @@ int ft_strncmp(char *s1, char *s2, unsigned int n)
 	}
 	return (0);
 }
-
+/*
 int main(int argc, char *argv[])
 {
 #include <string.h>
@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
 		printf("user defined function: %d\n", ft_strncmp(argv[1], argv[2],5));
 	}
 }
+	*/
 
 
 

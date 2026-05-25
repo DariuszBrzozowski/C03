@@ -1,31 +1,34 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbrzozow <dbrzozow@student.42warsaw.p      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/19 16:07:52 by dbrzozow          #+#    #+#             */
+/*   Updated: 2026/05/21 12:51:24 by dbrzozow         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include <stddef.h>
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	int	_found;
-	char	*out;
+	int	i;
 
 	if (*to_find == '\0')
 		return (str);
-	_found = 0;
 	while (*str != '\0')
 	{
-		if (*str == to_find[_found])
-		{
-			if (_found == 0)
-				out = str;
-			_found++;
-		}
-		else
-			_found = 0;
-
-		if (to_find[_found] == '\0')
-			return (out);
+		i = 0;
+		while (to_find[i] != '\0' && str[i] == to_find[i])
+			i++;
+		if (to_find[i] == '\0')
+			return (str);
 		str++;
 	}
-	return ('\0');
+	return (NULL);
 }
-/*
+
 int     main(int argc, char *argv[])
 {
         #include <string.h>
@@ -35,4 +38,4 @@ int     main(int argc, char *argv[])
                 printf("original: %s\n", strstr(argv[1], argv[2]));
                 printf("user written: %s\n", ft_strstr(argv[1], argv[2]));
         }
-}*/
+}

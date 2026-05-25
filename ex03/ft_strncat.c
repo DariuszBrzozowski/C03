@@ -1,7 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dbrzozow <dbrzozow@student.42warsaw.p      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/19 16:01:15 by dbrzozow          #+#    #+#             */
+/*   Updated: 2026/05/21 12:24:45 by dbrzozow         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	char 	*out;
-	unsigned int 	i;
+	char	*out;
+	unsigned int		i;
+
 	i = 0;
 	out = dest;
 	while (*dest != '\0')
@@ -12,15 +25,15 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 		i++;
 	}
 	dest[i] = '\0';
-	return out;
+	return (out);
 }
-/*
+
 int main(int argc, char *argv[])
 {
 #include <string.h>
 #include <stdio.h>
-	char o[5] = "Darek";
-	char u[5] = "Darek";
+	char o[7] = "Darek";
+	char u[7] = "Darek";
 
 	if (argc > 1)
 	{
@@ -28,4 +41,4 @@ int main(int argc, char *argv[])
 		printf("user defined function: %s\n", ft_strncat(u, argv[1], 3));
 	}
 }
-*/
+
